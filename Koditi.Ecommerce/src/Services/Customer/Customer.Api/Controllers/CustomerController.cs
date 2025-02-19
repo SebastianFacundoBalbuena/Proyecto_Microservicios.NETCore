@@ -47,9 +47,37 @@ namespace Customer.Api.Controllers
         [HttpPost]
         public async Task<ActionResult> Post(CustomerCommandEventHandler command)
         {
-            await _mediator.Publish(command);
+            if(command is CustomerCommandEventHandler)
+            {
+                await _mediator.Publish(command);
 
-            return NoContent();
+                return NoContent();
+            }
+
+            return NotFound("El objeto debe ser de tipo Customer");
+            
+
+        }
+
+        [HttpDelete]
+        public async  Task<ActionResult>Delete(CustomerDeleteCommand command)
+        {
+            try
+            {
+                if (command != null)
+                {
+                    await _mediator.Publish(command);
+
+                    return Ok("Se ha eliminado correctamente");
+                }
+
+                return NotFound("Debe ingresar una id");
+            }
+            catch (KeyNotFoundException ex)
+            {
+
+                return NotFound(ex.Message);
+            }
         }
     }
 }

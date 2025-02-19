@@ -61,6 +61,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.Services.Query", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.Services.EventHandlers", "src\Services\Customer\Customers.Services.EventHandlders\Customer.Services.EventHandlers.csproj", "{FD1AA2CD-071A-4981-BC83-DEC5822131B3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LoggerConfig", "LoggerConfig", "{77804290-F1DF-433F-BCB1-F502E8BDF8D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger.Config", "src\Services\Customer\Logger.Config\Logger.Config.csproj", "{9E7658EE-D43F-4CDE-805D-957509E8EABB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +119,10 @@ Global
 		{FD1AA2CD-071A-4981-BC83-DEC5822131B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD1AA2CD-071A-4981-BC83-DEC5822131B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD1AA2CD-071A-4981-BC83-DEC5822131B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E7658EE-D43F-4CDE-805D-957509E8EABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E7658EE-D43F-4CDE-805D-957509E8EABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E7658EE-D43F-4CDE-805D-957509E8EABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E7658EE-D43F-4CDE-805D-957509E8EABB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -146,6 +154,8 @@ Global
 		{17A56E06-97E4-46D2-A652-B42653F237C3} = {59D99665-19C3-4E51-BD08-8B624CB730CC}
 		{3DCEAB39-6805-4426-9CB2-B84C37970E5F} = {522EB0DB-DE65-466E-9BA2-6110D6B7851A}
 		{FD1AA2CD-071A-4981-BC83-DEC5822131B3} = {522EB0DB-DE65-466E-9BA2-6110D6B7851A}
+		{77804290-F1DF-433F-BCB1-F502E8BDF8D4} = {8F3641BC-DBA1-452A-81BB-BC1BA57EB412}
+		{9E7658EE-D43F-4CDE-805D-957509E8EABB} = {77804290-F1DF-433F-BCB1-F502E8BDF8D4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB54B6AE-82B2-40F5-95FB-6BA4A35FB0FE}

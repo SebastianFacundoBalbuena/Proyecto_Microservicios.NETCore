@@ -22,6 +22,7 @@
     <ProjectReference Include="..\Customer.Persistence.DataBase\Customer.Persistence.DataBase.csproj" />
     <ProjectReference Include="..\Customer.Services.Query\Customer.Services.Query.csproj" />
     <ProjectReference Include="..\Customers.Services.EventHandlders\Customer.Services.EventHandlers.csproj" />
+    <ProjectReference Include="..\Logger.Config\Logger.Config.csproj" />
   </ItemGroup>
 
 </Project>

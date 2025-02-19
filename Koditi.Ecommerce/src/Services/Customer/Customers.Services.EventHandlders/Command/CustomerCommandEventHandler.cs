@@ -6,8 +6,13 @@ namespace Customers.Services.EventHandlders.Command
     {
         //Properties
 
-        public int ClientId {  get; set; }
+        public int customerId {  get; set; }
 
         public string Name {  get; set; }
+    }
+
+    public class CustomerDeleteCommand : INotification
+    {
+        public int customerId { get; set; }
     }
 }

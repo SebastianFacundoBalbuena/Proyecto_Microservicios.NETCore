@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Customer.Services.Query;
 using MediatR;
 using System.Reflection;
+using Logger.Config;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<CustomerServicesQuery>();
 builder.Services.AddMediatR(Assembly.Load("Customer.Services.EventHandlers"));
+
+var papertrailsettings = builder.Configuration.GetSection("Papertrail").Get<PapertrailSettings>();
+LoggerConfig.LoggerConfigurations(papertrailsettings);
+builder.Host.UseSerilog();
 
 
 builder.Services.AddDbContext<ApplicationDbContextCustomer>(options =>
