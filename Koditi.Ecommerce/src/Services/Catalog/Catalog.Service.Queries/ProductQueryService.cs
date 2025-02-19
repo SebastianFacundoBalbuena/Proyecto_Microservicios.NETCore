@@ -19,11 +19,11 @@ namespace Catalog.Service.Queries
 
         public async Task<List<Product>> GetAll()
         {
-            _logger.LogInformation("ProductQueryService started");
+            _logger.LogInformation("ProductQueryService iniciado");
 
             List<Product>? ListProduct = await _Context.Products.Include(x=>x.Stock).ToListAsync();
 
-            _logger.LogInformation($"ProductQueryService ended and got the data {ListProduct}");
+            _logger.LogInformation($"ProductQueryService finalizado y trajo los datos {ListProduct}");
             return ListProduct;
 
         }

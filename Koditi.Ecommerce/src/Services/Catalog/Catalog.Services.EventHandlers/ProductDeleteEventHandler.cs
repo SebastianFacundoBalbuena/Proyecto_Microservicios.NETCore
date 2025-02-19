@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Catalog.Services.EventHandlers
 {
-    public class ProductDeleteEventHandler : INotificationHandler<ProductCreateCommand>
+    public class ProductDeleteEventHandler : INotificationHandler<ProductDeleteCommand>
     {
         private readonly ApplicationDbContext _Context;
         private readonly ILogger<ProductDeleteEventHandler> _logger;    
@@ -18,7 +18,7 @@ namespace Catalog.Services.EventHandlers
             _Context = Context;
             _logger = logger;
         }
-        public async Task Handle(ProductCreateCommand command, CancellationToken cancellationToken)
+        public async Task Handle(ProductDeleteCommand command, CancellationToken cancellationToken)
         {
             _logger.LogInformation("Buscando el id del producto");
             Product? product = await _Context.Products.FirstOrDefaultAsync(x=>x.ProductId == command.ProductId);

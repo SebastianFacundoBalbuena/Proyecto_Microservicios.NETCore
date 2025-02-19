@@ -1,13 +1,23 @@
 ﻿using Catalog.Services.EventHandlers;
 using Catalog.Services.EventHandlers.Commands;
 using Catalog.Testing.DataBaseTesting;
-using Catalog.Domain;
+using Moq;
+using Microsoft.Extensions.Logging;
 
 namespace Catalog.Testing
 {
     [TestClass]
     public class ProductInStockHandlerTesting
     {
+        //Moq del logger 
+        private ILogger<ProductInStockEventHandler> GetLogger
+        {
+            get
+            {
+                return new Mock<ILogger<ProductInStockEventHandler>>().Object;
+            }
+        }
+
         [TestMethod]
         public void ProductInStockCreateHandler()
         {
@@ -20,7 +30,7 @@ namespace Catalog.Testing
                 Stock = 10
             };
 
-            var handler = new ProductInStockEventHandler(context);
+            var handler = new ProductInStockEventHandler(context, GetLogger);
             handler.Handle(productNew, new CancellationToken()).Wait();
         }
     }

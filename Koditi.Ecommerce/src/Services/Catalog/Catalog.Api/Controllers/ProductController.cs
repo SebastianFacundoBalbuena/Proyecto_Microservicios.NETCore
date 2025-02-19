@@ -50,7 +50,7 @@ namespace Catalog.Api.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult> Delete(ProductCreateCommand command)
+        public async Task<ActionResult> Delete(ProductDeleteCommand command)
         {
             try
             {

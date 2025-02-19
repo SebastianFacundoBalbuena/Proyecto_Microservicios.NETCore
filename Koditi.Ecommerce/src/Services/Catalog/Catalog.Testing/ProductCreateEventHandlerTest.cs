@@ -29,6 +29,15 @@ namespace Catalog.Testing
             }
         }
 
+        private ILogger<ProductCreateEventHandler> GetLogger3
+        {
+            get
+            {
+                return new Mock<ILogger<ProductCreateEventHandler>>().Object;
+
+            }
+        }
+
         [TestMethod]
         public void AddStockProduct()
         {
@@ -45,7 +54,7 @@ namespace Catalog.Testing
 
 
 
-            var handler = new ProductCreateEventHandler(context);
+            var handler = new ProductCreateEventHandler(context, GetLogger3);
 
             handler.Handle(product, new CancellationToken()).Wait();
         }
@@ -68,7 +77,7 @@ namespace Catalog.Testing
             context.SaveChanges();
 
             //New Product
-            ProductCreateCommand product = new ProductCreateCommand()
+            ProductDeleteCommand product = new ProductDeleteCommand()
             {
                 ProductId = 0
             };
