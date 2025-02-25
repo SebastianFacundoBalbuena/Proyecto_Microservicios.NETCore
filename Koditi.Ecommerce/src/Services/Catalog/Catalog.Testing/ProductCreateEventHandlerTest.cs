@@ -88,5 +88,7 @@ namespace Catalog.Testing
              Assert.ThrowsExceptionAsync<KeyNotFoundException>(() => handler.Handle(product, new CancellationToken())).Wait();
 
         }
+
+
     }
 }
